@@ -1,0 +1,361 @@
+.headerHome {
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  min-height: 3em;
+  @media (--BiggerThanTablet) {
+    height: 3.5em;
+  }
+
+  /* Logo */
+  &__logo {
+    float: left;
+    height: 100%;
+    cursor: pointer;
+    width: auto;
+
+    &--mobile {
+      display: block;
+      @media (--BiggerThanTablet) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+      @media (--BiggerThanTablet) {
+        display: block;
+        padding: .4em;
+      }
+    }
+
+    & a {
+      height: 100%;
+
+      & img {
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0;
+        border: none;
+        height: 100%;
+        max-width: 35vw;
+
+
+        @media (width >= 375px) {
+          max-width: 40vw;
+        }
+        @media (width >= 500px) {
+          max-width: inherit;
+        }
+      }
+    }
+
+    /* Desktop */
+    @media (--BiggerThanTablet) {
+      float: none;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 11;
+    }
+  }
+
+  /* Membership */
+  &__navSign {
+    float: right;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (--BiggerThanTablet) {
+      float: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    &--mobile {
+      display: block;
+      @media (--BiggerThanTablet) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      & > a, & > label {
+        display: none;
+        @media (--BiggerThanTablet) {
+          color: #fff;
+          background:url("/images/img-v4/icons/lock.svg") no-repeat 0 center;
+          background-size: 15%;
+          display: block;
+          padding: 0 1em;
+        }
+
+        &:active,
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          opacity: 0.85;
+        }
+      }
+
+      &:active,
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    /* Button Base Overwrite for Navigation */
+    & .button,
+    & .minorButton {
+      /* Fallback */
+      padding: 1.2vh 2.2vw;
+      font-size: 0.8em;
+      margin-right: 2vw;
+
+      @media (--BiggerThaniPhone5) {
+        @media all and (orientation:landscape) {
+          padding: 0.8vw 2.5vh;
+          font-size: 2vw;
+        }
+        @media all and (orientation:portrait) {
+          padding: 1.2vh 2.2vw;
+          font-size: 2vh;
+        }
+      }
+    }
+  }
+
+  &__container {
+    height: 10vh;
+    min-height: 3em;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background: var(--ColLightest);
+    box-shadow: 0 0.2em 0 rgba(0,0,0,0.1);
+    -webkit-backface-visibility: hidden;
+
+    /* Desktop */
+    @media (--BiggerThanTablet) {
+      height: 3.5em;
+      background: transparent;
+      box-shadow: none;
+      position: relative;
+
+    }
+
+
+      &--homepage .headerHome__navPrimary .headerHome__mainNav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        height: calc(100% - (10vh - 0.3em));
+        max-height: calc(100% - (3em - 0.3em));
+        -webkit-backface-visibility: hidden;
+        list-style: none;
+
+        /* Desktop */
+        @media (--BiggerThanTablet) {
+          position: absolute;
+          overflow: visible;
+          height: 100%;
+          max-height: inherit;
+          left: 0;
+          bottom: 0;
+          padding-left: 10em;
+        }
+      }
+
+  }
+
+  /* Primary Navigation  */
+  &__navPrimary {
+    float: right;
+    height: 100%;
+
+
+    /* Desktop */
+    @media (--BiggerThanTablet) {
+      float: left;
+      width: 100%;
+      position: absolute;
+      overflow: visible;
+      height: 100%;
+      max-height: inherit;
+      left: 0;
+      bottom: 0;
+      padding-left: 10em;
+    }
+
+    & .headerHome__mainNav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      overflow-scrolling: touch;
+      height: calc(100% - (10vh - 0.3em));
+      max-height: calc(100% - (3em - 0.3em));
+      -webkit-backface-visibility: hidden;
+      list-style: none;
+      display:none;
+      background-color: rgba(255, 255, 255, 0.75);
+      width: 100%;
+      width: 100vw;
+
+      /* Desktop */
+      @media (--BiggerThanTablet) {
+        display: block;
+        background-color: transparent;
+        position: absolute;
+        overflow: visible;
+        height: 100%;
+        max-height: inherit;
+        left: 0;
+        bottom: 0;
+        padding-left: 6em;
+      }
+
+      & > .headerHome__mainNavListItem {
+        width: 100%;
+        background-color: var(--ColTealL);
+        font-size: var(--SizeP);
+        margin: 0;
+
+        /* Desktop */
+        @media (--BiggerThanTablet) {
+          display: inline-block;
+          width: auto;
+          height: 100%;
+          background-color: transparent;
+          padding: 0 .75em;
+
+
+          &--active ul {
+            display: block;
+          }
+
+          & > a, & > label {
+
+            &:active,
+            &:hover,
+            &:focus {
+              text-decoration: none;
+              color: #fff;
+              opacity: 0.85;
+            }
+          }
+
+          &:active,
+          &:hover,
+          &:focus {
+            background-color: transparent;
+          }
+        }
+
+        &:last-child {
+          box-shadow: 0 0.2em 0 rgba(0,0,0,0.1);
+
+          /* Desktop */
+          @media (--BiggerThanTablet) {
+            box-shadow: none;
+          }
+        }
+
+        & > a, & > label {
+          padding: 0.7em;
+          display: block;
+          color: var(--ColLightest);
+          font-weight: normal;
+          @media (--BiggerThanTablet) {
+            color: var(--ColLightest);
+            padding: 0;
+            line-height: 3.5em;
+            position: relative;
+            height: 100%;
+          }
+        }
+
+        &--active > a, &--active > label {
+          /* Desktop */
+          @media (--BiggerThanTablet) {
+            /* Triangle with shadow */
+            &:before
+            {
+              content: ' ';
+              display: block;
+              width: 0;
+              height: 0;
+              position: absolute;
+              border-left: 0.6em solid transparent;
+              border-right: 0.6em solid transparent;
+              border-top: 0.6em solid rgba(0,0,0,0.1);
+              bottom: -0.7em;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 9;
+            }
+            &:after {
+              content: ' ';
+              display: block;
+              width: 0;
+              height: 0;
+              position: absolute;
+              border-left: 0.5em solid transparent;
+              border-right: 0.5em solid transparent;
+              border-top: 0.5em solid var(--ColLightest);
+              bottom: -0.4em;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 10;
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+
+  /* Primary Navigation Mobile Icon - Checkbox Toggle */
+  &__navigationCheckbox {
+    display: none;
+
+    &:checked ~ ul.headerHome__mainNav {
+      display: block;
+    }
+    &:checked + div .headerHome__navIcon {
+      background: url(/images/img-v4/icons/cross.svg) no-repeat center center;
+      background-size: 55%;
+    }
+    &:checked + .headerHome__navIconContainer {
+      background-color: var(--ColTealL);
+    }
+  }
+
+  &__navIconContainer {
+    position: relative;
+    height: 100%;
+    min-width: 10vh;
+
+    /* Desktop */
+    @media (--BiggerThanTablet) {
+      display: none;
+    }
+  }
+
+  &__navIcon {
+      height: 100%;
+      min-width: 100%;
+      display: block;
+      background: url(/images/img-v4/icons/hamburger.svg) no-repeat center center;
+      background-size: 55%;
+      padding: 0 1.2em;
+  }
+}

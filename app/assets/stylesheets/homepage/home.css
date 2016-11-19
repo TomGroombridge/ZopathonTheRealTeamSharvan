@@ -1,0 +1,17 @@
+.partnerRow {
+  margin: 1em 0;
+  overflow: hidden;
+  height: 3em;
+  text-align: center;
+  padding-top: 0.5em;
+  &__partner {
+    display: inline-block;
+    margin: 0 .75em 3em .75em;
+    vertical-align: top;
+  }
+}
+.partner {
+  &__title {
+    text-align: center;
+  }
+}

@@ -1,0 +1,249 @@
+/* Base styles */
+body {
+  background-color: var(--ColLightest);
+  min-width: 320px;
+}
+
+a {
+  color: var(--ColTealD);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--FontPlain);
+
+  &.more {
+    position: relative;
+    font-size: var(--SizeH4);
+
+    &:after {
+      content: '\00bb'; /* => &raquo; */
+      position: absolute;
+      bottom: 0.1em;
+      right: -1em;
+    }
+  }
+
+  &.back {
+    position: relative;
+    padding-left: 1em;
+
+    &:before {
+      content: '\00ab'; /* => &laquo; */
+      position: absolute;
+      top: -0.1em;
+      left: 0;
+    }
+  }
+
+  &.show-more {
+    &.expanded{
+      &:before {
+        content: "\2212";
+      }
+    }
+    &:before {
+        content: '\002B';
+        display: inline-block;
+        width: .8em;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    color: var(--ColTealL);
+    text-decoration: underline;
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.orderedList {
+  list-style: decimal outside;
+  margin: 0 0 var(--SizeH4) 0;
+  & li {
+    margin: 0 0 .5em 1.5em;
+    & ol {
+      margin-top: .5em;
+    }
+    & ul {
+      margin-top: .5em;
+    }
+  }
+}
+
+.unorderedList {
+  list-style: disc outside;
+  margin: 0 0 var(--SizeH4) 0;
+  & li {
+    margin: 0 0 .5em 1.5em;
+    & ol {
+      margin-top: .5em;
+    }
+    & ul {
+      margin-top: .5em;
+    }
+  }
+  &--ticked {
+    & li {
+      background-image: url(/images/img-v4/icons/tick-teal.svg);
+      background-repeat: no-repeat;
+      background-position: 0 .35em;
+      background-size: 1.2em;
+      list-style: none;
+      line-height: 1.5em;
+      padding: 0 0 .8rem 1.8rem;
+      margin: 0;
+    }
+  }
+  &--hero {
+    display: inline-block;
+    margin-top: 1em;
+    & li {
+      text-align: left;
+      line-height: 1rem;
+      color: var(--ColLightest);
+    }
+  }
+  &--inline {
+    display: inline-block;
+  }
+}
+
+dt {
+  float: left;
+  clear: left;
+  font-weight: 600;
+  margin: 0 .2em 0 0;
+  padding: 0;
+}
+
+dd {
+  margin: 0 0 .5em 0;
+  padding: 0;
+  & ol {
+    margin-top: .5em;
+  }
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: var(--FontPlain);
+  background: inherit;
+  padding: 0;
+  overflow: visible;
+}
+
+.tableSimple {
+  border-collapse: collapse;
+  empty-cells: show;
+  border-spacing: 0;
+  border: 1px solid var(--ColNavyL);
+  margin-bottom: var(--SizeH3);
+  & thead th,
+  & thead td {
+    background-color: var(--ColNavyL);
+    color: #FFF;
+    font-weight: 600;
+  }
+  & tbody th,
+  & tbody td {
+    background-color: #FFF;
+  }
+  & th {
+    font-weight: 600;
+  }
+  & th,
+  & td {
+    padding: .5em .7em;
+    margin: 0;
+    vertical-align: top;
+    text-align: left;
+    border: 1px solid var(--ColNavyL);
+  }
+}
+
+.tableWrapper{
+  overflow-y: auto;
+}
+
+.error {
+  color: var(--ColError);
+}
+
+.bigNumber, .bigText {
+  display: inline-block;
+  font-size: var(--SizeH1);
+  font-weight: 300;
+  margin: 0.2em 0 0.2em 0;
+  @media (--BiggerThanMobile) {
+    font-size: var(--LrgSizeH1);
+  }
+}
+
+/* Global classes */
+/* Hide in an accessible way */
+.a11y {
+  position: absolute;
+  left: -99999em;
+  top: 0;
+  overflow: hidden;
+  display: inline;
+}
+
+/* Hide on mobile */
+.hideMobile {
+  display: none;
+  @media (--BiggerThanMobile) {
+    display: block;
+  }
+  &--inlineBlock{
+    @media (--BiggerThanMobile) {
+      display: inline-block;
+    }
+  }
+}
+
+/* Hide on tablet */
+.hideTablet {
+  display: none;
+  @media (--BiggerThanTablet) {
+    display: block;
+  }
+  &--inlineBlock{
+    @media (--BiggerThanTablet) {
+      display: inline-block;
+    }
+  }
+}
+
+/* Hide content */
+.hidden {
+  display: none;
+}
+
+/* Hide if javascript is enabled */
+.js {
+  .no-js-only {
+    display: none;
+  }
+}
+
+/* Keep words, phrases or sentences together when wrapping (a better alternative to &nbsp;) */
+.bunch {
+  display: inline;
+  @media (--BiggerThanMobile) {
+    display: inline-block;
+  }
+}
+
+/* Prevents background (body) scrolling when a foreground element needs to scroll (mobile)  */
+.scrollLocked {
+  @media (--SmallerThanTablet) {
+    overflow: hidden;
+  }
+}

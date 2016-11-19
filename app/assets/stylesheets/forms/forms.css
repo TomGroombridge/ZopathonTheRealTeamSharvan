@@ -1,0 +1,433 @@
+.button {
+  background: var(--ColRubyL);
+  font-size: 1em;
+  padding: .7em 1.8em;
+  border-radius: 5em;
+  border: none;
+  border-bottom: .3em var(--ColRubyD) solid;
+  font-family: var(--FontFlair);
+  color:#fff;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+
+  &--fullWidth {
+    width: 100%;
+    display: block;
+  }
+
+  &.super {
+    font-size: 1.2em;
+  }
+
+  &.secondary {
+    background: var(--ColNavyL);
+    border-bottom: .3em var(--ColNavyD) solid;
+    &:active,
+    &:hover {
+      background: var(--ColNavyD);
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &:active,
+  &:hover {
+    background: var(--ColRubyD);
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+  }
+  &:disabled {
+    background: var(--ColGreyD);
+    border-bottom-color: var(--ColText);
+  }
+}
+
+.minorButton {
+  background: var(--ColNavyL);
+  font-size: .7em;
+  font-weight: 700;
+  padding: .7em 1.8em;
+  border-radius: 5em;
+  border:none;
+  border-bottom: .3em var(--ColNavyD) solid;
+  font-family: var(--FontFlair);
+  color: #fff;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+
+  &:active,
+  &:hover {
+    background: var(--ColNavyD);
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:disabled {
+    background: var(--ColGreyD);
+    border-bottom-color: var(--ColText);
+  }
+}
+
+.customCheckBox {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 2.5em;
+  &:hover{
+    cursor:pointer;
+  }
+  &__check {
+    opacity: 0;
+    position: absolute;
+    &:hover{
+      cursor:pointer;
+    }
+    &:checked + label:after {
+      opacity: 1;
+
+    }
+
+    &:checked + label:before {
+      border-color: var(--ColNavyL);
+    }
+  }
+
+  &__label {
+    line-height: 1.8em; /* derive this from label:before height; */
+    &:hover{
+      cursor:pointer;
+    }
+    &:before, &:after {
+      content: '';
+      line-height: 1;
+      position: absolute;
+      border-color: var(--ColNavyL);
+    }
+
+    &:before {
+      left: -2.5em;
+      width: 1.8em;
+      height: 1.8em; /* define line height of label from this */
+      top: -.1em;
+      border: .25em solid;
+      border-color: var(--ColGreyM);
+    }
+
+    &:after {
+      opacity: 0;
+      width: 1em;
+      height: .55em;
+      top: .45em;
+      left: -2.1em;
+      border: solid;
+      border-width: 0 0 .25em .25em;
+      background: transparent;
+      transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      border-color: var(--ColNavyL);
+    }
+  }
+}
+
+.customRadioButton {
+  position: relative;
+  display: inline-block;
+  margin: 0 2em 0 2.5em;
+
+
+ &__input {
+    opacity: 0;
+    position: absolute;
+
+    &:checked + label:after {
+      background: #fff;
+    }
+
+    &:checked + label:before {
+      opacity: 1;
+      border: .5em var(--ColTealL) solid;
+
+    }
+
+    &:hover + label:after {
+      opacity: 1;
+    }
+  }
+
+  &__label {
+    &:before, &:after {
+      content: '';
+      line-height: 1;
+      position: absolute;
+      left: .5em;
+      @media (--BiggerThaniPhone5) {
+        left: 1em;
+      }
+      @media (--BiggerThanMobile) {
+        left: 2em;
+      }
+      top: .15em;
+      border-radius: 1.8em;
+    }
+
+    &:before {
+      width: 1.5em;
+      height: 1.5em;
+      border: .15em solid;
+      color: #aaa;
+    }
+
+    &:after {
+      color: transparent;
+      background: #aaa;
+      opacity: .3;
+      width: .5em;
+      height: .5em;
+      margin: .5em .5em;
+    }
+  }
+}
+
+.formGroup {
+
+  &__label {
+    color: var(--ColNavyL);
+    display: block;
+    font-family: var(--FontPlain);
+    padding: .3em 0;
+    &.error {
+      color: var(--ColError);
+    }
+  }
+
+  &__hint {
+    display: block;
+    margin: 0.5em 0;
+    color: var(--ColGreyD);
+  }
+
+  &__input {
+    &--text,
+    &--email,
+    &--tel,
+    &--number,
+    &--password
+    {
+      background: #fff;
+      border: none;
+      border-bottom: 0.2em var(--ColGreyM) solid;
+      font-size: inherit;
+      font-weight: 200;
+      padding: .4em;
+    }
+    &:focus {
+      border-bottom: 0.2em var(--ColBlueD) solid;
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    min-width: 10em;
+    min-height: 8em;
+    font-size: 1em;
+  }
+
+  &__select {
+    height: 2.155em;
+    background: #fff;
+    border: none;
+    border-bottom: 0.2em transparent solid;
+    font-size: inherit;
+    font-weight: 300;
+    padding: .4em;
+    border-radius:0;
+    &:focus {
+      border-bottom: 0.2em var(--ColBlueD) solid;
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    border: 0;
+    padding: 1em;
+    min-width: 10em;
+    min-height: 8em;
+    font-size: 1em;
+  }
+
+  &__row {
+    margin: 0 0 1em 0;
+  }
+}
+
+.centeredForm {
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em;
+  background-color: #fff;
+  @media (--BiggerThanMobile) {
+    width: 66%;
+    padding: 1em 12.5%;
+  }
+  &__input {
+    width: 100%;
+    background: var(--ColGreyLightest);
+  }
+  &__textarea {
+    width: 100%;
+  }
+  &--bgGrey {
+    background: var(--ColGreyL);
+    & .centeredForm__input {
+      background-color: #fff;
+    }
+  }
+  &--marginAfter {
+    margin-bottom: 2em;
+  }
+  &--tool {
+    @media (--BiggerThanMobile) {
+      width: 100%;
+      padding: 1em 5%;
+    }
+  }
+}
+
+.simpleSlider {
+  &__input {
+    @supports (-ms-ime-align:auto) {
+      margin-bottom: -0.6em;
+      height: 1.5em;
+      &::-ms-thumb {
+        transform: translateY(0.4em);
+      }
+    }
+  }
+}
+
+/* Simple Range Slider Base */
+.simpleSlider {
+  position: relative;
+  text-align: center;
+  min-width: 16em;
+
+  /* Buttons */
+  &__decrease, &__increase {
+    color: var(--ColLightest);
+    background: none;
+    margin: 0;
+    padding: 0 0.3em;
+    border: 0;
+    outline: 0;
+    font-size: 1.8em;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  /* Slider */
+  &__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 70%;
+    outline: none;
+    padding: 0;
+    margin: 0;
+
+    /** Slider Track **/
+    /* Webkit */
+    &::-webkit-slider-runnable-track {
+      height: 0.2em;
+      background: var(--ColLightest);
+    }
+    /* Firefox */
+    &::-moz-range-track {
+      height: 0.2em;
+      background: var(--ColLightest);
+      border: 0;
+      transform: translateY(0.5em);
+    }
+    &::-moz-focus-inner,
+    &::-moz-focus-outer {
+      border: 0;
+    }
+    /* IE */
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+      background-color: var(--ColLightest);
+      height: 0.2em;
+    }
+    &::-ms-ticks-before {
+      color: transparent;
+      background: transparent;
+      display: block;
+    }
+    &::-ms-track {
+      width: 100%;
+      border: 0;
+      color: transparent;
+      background-color: transparent;
+    }
+    &::-ms-ticks-after  {
+      color: transparent;
+      display: block;
+      background: transparent;
+    }
+
+    /** Slider Thumb **/
+    /*  Webkit */
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 1.8em;
+      height: 1.8em;
+      margin-top: -0.8em;
+      border: 0.2em var(--ColLightest) solid;
+      border-radius: 50%;
+      background: var(--ColLightest);
+      cursor: pointer;
+      transition: background .15s ease-in-out;
+      &:hover { background: var(--ColLightest); }
+    }
+    /* Firefox */
+    &::-moz-range-thumb {
+      -moz-appearance:none;
+      width: 1.5em;
+      height: 1.5em;
+      border:0.2em var(--ColLightest) solid;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: translateY(0.5em);
+      transition: background .15s ease-in-out;
+      &:hover { background: var(--ColLightest); }
+    }
+    /* IE */
+    &::-ms-thumb {
+      width: 0.8em;
+      height: 0.8em;
+      border: 0.1em var(--ColLightest) solid;
+      border-radius: 50%;
+      cursor: pointer;
+      background: var(--ColLightest);
+    }
+
+  }
+}

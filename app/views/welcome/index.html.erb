@@ -1,0 +1,66 @@
+<section class="hero">
+  <div class="hero__background hero__background--home">
+    <div class="hero__introContainer hero__introContainer--home">
+      <h1 class="hero__introHeader superH1">See your personalised loan rates <span class="bunch">in just 3&nbsp;minutes</span></h1>
+      <p class="hero__introSubheader">Our rates are often lower than the banks. <span class="bunch">Checking your rates <strong>won't affect your credit score</strong>.</span></p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section twoBlock" id="who-is-zopa">
+<div class="calculator calculator--simple">
+  <div class="calculator__innerContainer">
+    <%= form_for @loan, class: "calculator__form" do |f| %>
+      <fieldset class="calculator__fieldset">
+        <div class="calculator__top">
+
+          <p class="calculator__amountHeader">
+            <span class="calculator__amountText">I want to get a loan for</span>
+            <%= f.number_field :loan_amount %>
+          </p>
+
+          <p class="calculator__amountHeader">
+            <span class="calculator__amountText">over a period of</span>
+
+              <span class="calculator__amountDropdown">
+                <%= f.number_field :loan_term %>
+              </span>
+
+            <span class="calculator__amountText">months</span>
+          </p>
+
+        </div>
+        <div class="calculator__content">
+          <div class="calculator__quoteContainer">
+            <%= f.submit 'Get my personalised rates', class: "calculator__getQuote button" %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+
+</div>
+
+</section>
+
+<section class="section" id="why">
+  <div class="wrap">
+
+    <h2>Why a Zopa loan?</h2>
+    <ul class="unorderedList unorderedList--ticked">
+      <li>Our rates are often lower than the banks</li>
+      <li>Checking your rates <strong>won't affect your credit score</strong></li>
+      <li>We approve over £2 million every day to people with a good credit history</li>
+      <li>Simple online application &ndash; no paperwork through the post</li>
+      <li>No early repayment fees, no hidden charges</li>
+    </ul>
+
+  </div>
+</section>
+<section class="section section--bgGrey">
+  <div class="calculator calculator--hero" id="calculator">
+
+  </div>
+</section>

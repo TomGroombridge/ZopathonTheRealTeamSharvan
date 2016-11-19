@@ -1,0 +1,119 @@
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <h2 class="contact__header">We're here to help</h2>
+
+    <p class="contact__endOfGroup">
+      <%= render '/shared/contact_office_hours' %>
+    </p>
+
+    <p class="contact__group">
+      Email: <a href="mailto:contactus@zopa.com">contactus@zopa.com</a>
+    </p>
+
+
+
+
+      <p class="contact__endOfGroup">
+        Telephone: <strong>020&#xa0;7580&#xa0;6060</strong>
+      </p>
+
+      <p class="contact__hint hint">
+        We can't take applications over the phone.
+        UK residents only.
+        <span class="bunch">Calls may be monitored or recorded.</span>
+
+
+
+
+
+
+
+
+
+
+    <div class="trustpilot-widget"
+        data-locale="en-GB"
+        data-template-id="5419b6ffb0d04a076446a9af"
+        data-businessunit-id="4c9328ce00006400050de080"
+        data-style-height="20px"
+        data-style-width="100%"
+        data-theme="light">
+      <a href="https://uk.trustpilot.com/review/zopa.com" target="_blank" title="See all Zopa reviews on TrustPilot">
+        <p class="hint">
+          <%= image_tag "trustpilot-5-stars.png", width: 109, height: 20, hspace: 10, alt: "5 stars" %>
+
+          <%= image_tag "trustpilot-logo.svg", width: 120, height: 14, hspace: 10, alt: "TrustPilot" %>
+        </p>
+      </a>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+<% bw_url = defined?(brochureware_url) ? brochureware_url : "/" %>
+<div id="footer" class="section footer footer__borrowers">
+  <div class="footer__links">
+    <div class="footer__loansColumn">
+      <input type="checkbox" id="footer-ckh1" class="footer__chkToggle">
+      <h4 class="footer__linksHeader"><label for="footer-ckh1" class="footer__btnToggle">Loans</label></h4>
+      <ul class="footer__linksList">
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>loans">Zopa loans</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>loans/debt-consolidation">Debt consolidation</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>loans/home-improvement">Home improvements</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>loans/car-finance">Car finance</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>loans/wedding">Weddings</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>loans/zopa-reviews">Loan reviews</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>loans/faq">FAQs for loans</a></li>
+      </ul>
+    </div><div class="footer__aboutColumn">
+      <input type="checkbox" id="footer-ckh2" class="footer__chkToggle">
+      <h4 class="footer__linksHeader"><label for="footer-ckh2" class="footer__btnToggle">About Zopa</label></h4>
+      <ul class="footer__linksList">
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>about">About Zopa</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="http://blog.zopa.com/">Blog</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>partnerships">Partnerships</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="https://zopa.recruitee.com/">Working at Zopa</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>team">Meet the team</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>about#press">Press office</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>contact">Contact Zopa</a></li>
+      </ul>
+    </div><div class="footer__navigationColumn">
+      <input type="checkbox" id="footer-ckh4" class="footer__chkToggle">
+      <h4 class="footer__linksHeader"><label for="footer-ckh4" class="footer__btnToggle">Navigation</label></h4>
+      <ul class="footer__linksList">
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>">Homepage</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>sitemap">Sitemap</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>privacy-policy">Privacy policy</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>principles">Principles</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>cookie-policy">Cookie policy</a></li>
+        <li class="footer__linksListItem"><a class="footer__link" href="<%= bw_url %>conflicts-policy">Conflicts policy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <ul class="footer__socialLinkList">
+    <li class="footer__socialLinkItem"><a class="footer__socialIcon footer__socialIcon-twitter" href="http://twitter.com/zopa" title="Find us on Twitter">Twitter</a></li>
+    <li class="footer__socialLinkItem"><a class="footer__socialIcon footer__socialIcon-facebook" href="http://facebook.com/zopa" title="Find us on Facebook">Facebook</a></li>
+    <li class="footer__socialLinkItem"><a class="footer__socialIcon footer__socialIcon-googlePlus" href="https://plus.google.com/b/113730959209325000142/113730959209325000142/posts" title="Find us on Google+">Google+</a></li>
+  </ul>
+
+  <% bw_url = defined?(brochureware_url) ? brochureware_url : "/" %>
+  <div class="footer__legals">
+    <p class="hint">
+      &copy; Zopa Limited <%= Time.now.year %> All rights reserved. 'Zopa' and the Zopa logo are trade marks of Zopa Limited.
+      Zopa is a member of CIFAS <span class="bunch">&ndash; the UK's leading anti-fraud association</span>, and we are registered with the <span class="bunch">Office of the Information Commissioner</span> (No.&nbsp;Z879078).
+    </p>
+    <p class="hint">
+      Zopa Limited is incorporated in England &amp; Wales (registration number 05197592), with its registered office at <span class="bunch">Cottons Centre, Tooley St, London SE1 2QG.</span> Zopa Limited is authorised and regulated by the Financial Conduct Authority, and entered on the Financial Services Register under firm&nbsp;registration&nbsp;number&nbsp;563134.
+    </p>
+  </div>
+  <div class="cookieNotice">
+    <p class="footer__cookieNotice ant">
+      We have placed cookies on your computer to help make this website better. Find out more <a href="<%= bw_url %>cookie-policy">about our cookies</a> and how to change your settings, otherwise we'll assume you're OK to continue. <a href="#" class="close">Hide this message</a>
+    </p>
+   </div>
+
+</div>

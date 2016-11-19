@@ -1,0 +1,57 @@
+.heroHome {
+  padding: 0;
+  top: -4em;
+  margin-bottom: -4em;
+  z-index: 1;
+  background-color: var(--ColGreyL);
+  /* Hero Background */
+  &__background {
+    overflow: hidden; /* BUGFIX : without causes unwanted space on right */
+    position: relative;
+    min-height: 240px; /* iPhone5 Landscape %75 */
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    &--homepage {
+      background-image:
+        url(/images/img-v4/views/shared/darkOverlay.svg),
+        url(/images/img-v4/views/shared/hero-homepage.jpg);
+        background-position: center center;
+    }
+  }
+
+  /* Intro Content */
+  &__image {
+    padding: 0 0 var(--SizeH4) 0;
+  }
+  &__introContainer {
+    width: 100%;
+    padding: 8em 0.5em 6em 0.5em;
+    text-align: center;
+    @media (--BiggerThanMobile) {
+      padding: 12em 0.5em 10em 0.5em;
+    }
+  }
+  &__introHeader {
+    color: var(--ColLightest);
+    text-shadow: 0 2px 24px var(--ColShadow);
+    margin: 0 0 var(--SizeH4) 0;
+    & h1 {
+      color: var(--ColLightest);
+    }
+  }
+  &__introSubheader {
+    color: var(--ColLightest);
+    font-size: var(--LrgSizeH4);
+  }
+  &__introText {
+    width: 100%;
+    margin: 0 auto;
+    color: var(--ColLightest);
+    font-size: var(--LrgSizeP);
+    @media (--BiggerThanTablet) {
+      width: 75%;
+    }
+  }
+}

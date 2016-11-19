@@ -1,0 +1,52 @@
+<div id="header" class="header">
+  <div class="header__container header__container--sticky">
+
+    <div class="header__logo">
+      <a href="/" title="Back to homepage" data-trackinglabel="Zopa logo">
+        <%= image_tag 'zopa_logo.svg', alt: 'Zopa' %>
+      </a>
+      <a href="#content" class="a11y skip" style="display: none;">Skip to content</a>
+    </div>
+
+    <div class="header__navPrimary">
+
+      <input type="checkbox" id="chk__navigation" class="header__navigationCheckbox" onchange="toggleScrollLock()">
+      <div class="header__navIconContainer">
+        <label for="chk__navigation" class="header__navIcon"></label>
+      </div>
+
+      <% if content_for?(:subnav) && @_audience == :borrower %>
+        <input type="checkbox" id="chk__subNav__borrower" class="header__subNavigationCheckbox header__subNavigationCheckbox--borrower">
+      <% end %>
+      <% if content_for?(:subnav) && @_audience == :lender %>
+        <input type="checkbox" id="chk__subNav__lender" class="header__subNavigationCheckbox header__subNavigationCheckbox--lender">
+      <% end %>
+
+      <ul class="header__mainNav">
+        <li class="header__mainNavListItem">
+          <% if content_for?(:subnav) && @_audience == :borrower %>
+            <label for="chk__subNav__borrower">Get a Zopa loan</label>
+            <%= yield_content :subnav %>
+          <% else %>
+            <a href="/loans">Get a Zopa loan</a>
+          <% end %>
+        </li>
+        <li class="header__mainNavListItem<%= ' header__mainNavListItem--active' if @_audience == :lender %>">
+          <% if content_for?(:subnav) && @_audience == :lender %>
+            <label for="chk__subNav__lender" class="header__navSub">Invest with Zopa</label>
+            <%= yield_content :subnav %>
+          <% else %>
+            <a href="/lending" class="header__noSubNav">Invest with Zopa</a>
+          <% end %>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="header__navSign header__navSign--signedIn">
+      <a href="/signout" class="signout button">Sign&#xa0;out</a>
+      <a href="/login" class="signin button">Sign&#xa0;in</a>
+    </div>
+
+  </div>
+</div>

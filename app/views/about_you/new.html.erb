@@ -1,0 +1,45 @@
+<section class="section twoBlock" id="who-is-zopa">
+<div class="calculator calculator--simple">
+  <div class="calculator__innerContainer">
+
+      <fieldset class="calculator__fieldset">
+        <div class="calculator__top">
+
+          <p class="calculator__amountHeader">
+            <span class="calculator__amountText">I want to get a loan for</span>
+            <%= f.number_field :loan_amount %>
+          </p>
+
+          <p class="calculator__amountHeader">
+            <span class="calculator__amountText">over a period of</span>
+
+              <span class="calculator__amountDropdown">
+                <%= f.number_field :loan_term %>
+              </span>
+
+            <span class="calculator__amountText">months</span>
+          </p>
+
+        </div>
+        <div class="calculator__content">
+          <div class="calculator__quoteContainer">
+            <%= f.submit 'Get my personalised rates', class: "calculator__getQuote button" %>
+          </div>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+
+</div>
+
+</section>
+
+
+<% if user_signed_in? %>
+  <li><%= link_to 'Sign out', signout_path %></li>
+<% else %>
+  <li><%= link_to 'Sign in with Amazon', signin_path %></li>
+<% end %>
+<% if user_signed_in? %>
+  <li><%= link_to 'Users', users_path %></li>
+<% end %>
